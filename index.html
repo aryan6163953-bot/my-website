@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Portfolio</title>
+    <title>Aryan | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
             font-family: Arial, sans-serif;
         }
 
@@ -20,14 +20,20 @@
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background: #0f172a;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: #111827;
+            z-index: 1000;
         }
 
-        nav h2 {
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
             color: #38bdf8;
         }
 
@@ -35,66 +41,134 @@
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-size: 17px;
         }
 
-        .hero {
-            min-height: 80vh;
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 8% 60px;
+        }
+
+        .home {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
         }
 
-        .hero h1 {
-            font-size: 45px;
+        .home h1 {
+            font-size: 55px;
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
+        .home h1 span {
             color: #38bdf8;
         }
 
-        .hero p {
-            font-size: 20px;
+        .home p {
+            font-size: 22px;
             color: #cbd5e1;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .btn {
+            display: inline-block;
+            padding: 15px 30px;
             background: #38bdf8;
             color: #0f172a;
-            padding: 12px 25px;
-            border-radius: 8px;
             text-decoration: none;
+            border-radius: 10px;
             font-weight: bold;
+            font-size: 18px;
         }
 
-        section {
-            padding: 70px 8%;
+        .title {
             text-align: center;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 40px;
+            margin-bottom: 40px;
             color: #38bdf8;
         }
 
-        .card {
-            max-width: 700px;
+        .about {
+            max-width: 800px;
             margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
             background: #1e293b;
-            padding: 30px;
+            padding: 25px;
+            width: 180px;
+            text-align: center;
             border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .skill h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 19px;
+            margin: 15px;
+            color: #cbd5e1;
         }
 
         footer {
             text-align: center;
             padding: 25px;
-            background: #111827;
+            background: #020617;
             color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 14px;
+            }
+
+            .home h1 {
+                font-size: 42px;
+            }
+
+            .home p {
+                font-size: 18px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -102,58 +176,73 @@
 <body>
 
     <nav>
-        <h2>My Portfolio</h2>
+        <div class="logo">Aryan</div>
 
         <div>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-
-    <section class="hero" id="home">
-
+    <section class="home" id="home">
         <h1>Hello, I'm <span>Aryan</span> 👋</h1>
-
-        <p>Welcome to my personal website 🚀</p>
-
+        <p>Welcome to my personal portfolio 🚀</p>
         <a href="#about" class="btn">Explore More</a>
-
     </section>
-
 
     <section id="about">
+        <h2 class="title">About Me</h2>
 
-        <h2>About Me</h2>
-
-        <div class="card">
+        <div class="about">
             <p>
-                Hi! I'm Aryan. This is my first personal website
-                created using HTML, CSS and GitHub Pages.
+                Hi! I'm Aryan. This is my personal portfolio website.
+                I'm learning web development and programming.
+                I enjoy learning new technology and creating new projects.
             </p>
         </div>
-
     </section>
-
 
     <section id="skills">
+        <h2 class="title">My Skills</h2>
 
-        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Web Structure</p>
+            </div>
 
-        <div class="card">
-            <p>💻 HTML</p>
-            <p>🎨 CSS</p>
-            <p>📊 MS Excel</p>
-            <p>🐍 Programming</p>
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Web Design</p>
+            </div>
+
+            <div class="skill">
+                <h3>C</h3>
+                <p>Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>Excel</h3>
+                <p>Data Handling</p>
+            </div>
         </div>
-
     </section>
 
+    <section id="contact">
+        <h2 class="title">Contact Me</h2>
+
+        <div class="contact">
+            <p>📧 Email: your@email.com</p>
+            <p>📱 Phone: Your Number</p>
+            <p>📍 India 🇮🇳</p>
+        </div>
+    </section>
 
     <footer>
         © 2026 Aryan | My Portfolio
     </footer>
 
 </body>
-</html>
+            </html>
